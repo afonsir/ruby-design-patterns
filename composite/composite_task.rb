@@ -8,6 +8,18 @@ class CompositeTask < Task
     @sub_tasks = []
   end
 
+  def [](index)
+    @sub_tasks[index]
+  end
+
+  def []=(index, new_value)
+    @sub_tasks[index] = new_value
+  end
+
+  def <<(task)
+    @sub_tasks << task
+  end
+
   def add_sub_task(task)
     @sub_tasks << task
   end
