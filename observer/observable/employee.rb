@@ -2,8 +2,8 @@
 
 require 'observer'
 
-require_relative 'payroll'
-require_relative 'tax_man'
+require_relative '../payroll'
+require_relative '../tax_man'
 
 class Employee
   include Observable
