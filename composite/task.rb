@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 class Task
-  attr_reader :name
+  attr_accessor :name, :parent
 
   def initialize(name)
     @name = name
+    @parent = nil
   end
 
   def get_time_required
