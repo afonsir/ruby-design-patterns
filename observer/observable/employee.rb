@@ -19,9 +19,13 @@ class Employee
   end
 
   def salary=(new_salary)
+    old_salary = @salary
     @salary = new_salary
-    changed
-    notify_observers(self)
+
+    if old_salary != new_salary
+      changed
+      notify_observers(self)
+    end
   end
 end
 
@@ -34,3 +38,5 @@ tax_man = TaxMan.new
 fred.add_observer(tax_man)
 
 fred.salary = 35_000.00
+fred.salary = 35_000.00
+fred.salary = 30_000.00
